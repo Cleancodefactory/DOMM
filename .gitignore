@@ -1,0 +1,4 @@
+**/node_modules/
+**/documentation/
+run_build.bat
+**/builder

@@ -1,0 +1,40 @@
+<div id="mocha">
+    <!---->
+    <script src="node_modules/mocha/mocha.js"></script>
+    <script src="node_modules/chai/chai.js"></script>
+    <script>mocha.setup('bdd')</script>
+    <!--DOMMNode tests-->
+    <script src="tests/DOMMNode_tests/DOMMNodeCreateAndRemove.js"></script>
+     <script src="tests/DOMMNode_tests/DOMMNodeQueries.js"></script>
+    <script src="tests/DOMMNode_tests/DOMMNodeStringRepresentations.js"></script>
+    <script src="tests/DOMMNode_tests/DOMMNodeProperties.js"></script>
+    <script src="tests/DOMMNode_tests/DOMMNodeAttributes.js"></script>
+    <script src="tests/DOMMNode_tests/DOMMNodeClasses.js"></script>
+    <script src="tests/DOMMNode_tests/DOMMNodeStyles.js"></script>
+    <script src="tests/DOMMNode_tests/DOMMNodeChildNodes.js"></script>
+    <script src="tests/DOMMNode_tests/DOMMNodeEquals.js"></script>
+    <script src="tests/DOMMNode_tests/DOMMNodeRelatives.js"></script>
+    <script src="tests/DOMMNode_tests/DOMMNodeChaining.js"></script>
+
+    <!--DOMMNodeCollection tests-->
+    <script src="tests/DOMMNodeCollection_tests/DOMMNodeCollectionClasses.js"></script>
+    <script src="tests/DOMMNodeCollection_tests/DOMMNodeCollectionStyles.js"></script>
+    <script src="tests/DOMMNodeCollection_tests/DOMMNodeCollectionSpecificMethods.js"></script>
+    <script src="tests/DOMMNodeCollection_tests/DOMMNodeCollectionCreateAndRemove.js"></script>
+    <script src="tests/DOMMNodeCollection_tests/DOMMNodeCollectionInsertion.js"></script>
+    <script src="tests/DOMMNodeCollection_tests/DOMMNodeCollectionOthers.js"></script>
+
+    <!--Immutable tests-->
+    <script src="tests/ImmutableTests/ImmutableBase.js"></script>
+    <script src="tests/ImmutableTests/ImmutableCollection.js"></script>
+
+    <!--Test loader-->
+    <script src="tests/tests.js"></script>
+    
+    <script>
+        mocha.checkLeaks();
+        mocha.run();
+    </script>
+</div>
+
+    
