@@ -1,4 +1,4 @@
-# Project Title
+# DOMM (DOM Manager)
 
 This library was build to give you the opportunity to access existing elements in the DOM tree, create new elements, add and manipulate the elements as you want.
 
