@@ -1,6 +1,7 @@
-//TODO:
-//1. Append with DOMMNodeCollection
-//2. Remove method additional methods with parameters
+/*!
+ * DOMM - v 1.0.0 2018-06-12
+ * Copyright Clean Code Factory cleancodefactory.de
+ */
 
 (function () {
 	//---------- CREATING AND DESTROYING A DOMMNODE OBJECT section ---------- 

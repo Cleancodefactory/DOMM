@@ -28,7 +28,7 @@ If you want to run the test server and tests of the repository you must have Nod
 When there is Node.js installed, clone the repository. Navigate to the folder where you want to clone it and run.
 
 ```
-git clone PLACE_THE_URL HERE!
+git clone https://github.com/Cleancodefactory/DOMM.git
 ```
 
 After that you must download the required Node.js modules by executing the command below in the main repository folder.

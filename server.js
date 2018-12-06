@@ -28,9 +28,8 @@ app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, 'tests/views'));
 
 app.get('/', (request, response) => {
-    console.log(__dirname)
     response.render('home', {
     });
   });
 
-app.listen(5002);
+  app.listen(5002, () => console.log('Server is listening on port 5002!'));

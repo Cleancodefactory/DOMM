@@ -1817,6 +1817,7 @@ if ( typeof define === "function" && define.amd ) {
 })( window );
 
 
+
 Function.prototype.inherits = function(superCtor){
     this.prototype = Object.create(superCtor.prototype);
     this.prototype.base = superCtor;
@@ -1846,6 +1847,7 @@ Object.Clone = function(obj) {
     }
     return copy;
 }
+
 var ImmutableBase = function(){
 	this._isImmutable = true;
 };
@@ -1857,6 +1859,8 @@ ImmutableBase.IsImmutable = function(obj){
 ImmutableBase.prototype.clone = function(){
 	return Object.Copy(this);
 };
+
+
 var ImmutableCollection= function(arr){
 	ImmutableBase.call(this);
 
@@ -1962,6 +1966,7 @@ ImmutableCollection.prototype.empty = function(){
 ImmutableCollection.prototype.toString = function(){
 	return "[" + this.join() + "]";
 };
+
 
 var DOMM = function(selector){   
     var _validateNodeType = function(node) {
@@ -2960,6 +2965,7 @@ var _ = DOMM;
 			return this;
 	};
 })();
+
 (function () {
 DOMMNodeCollection = function (inputNodeCollection) {
 	ImmutableCollection.call(this);
@@ -3246,6 +3252,7 @@ var isProperDOMMNode = function(node){
 	return node instanceof DOMMNode && node._node != undefined;
 };
 })();
+
 
 
 (function () {

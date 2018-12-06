@@ -1,3 +1,9 @@
+/*!
+ * DOMM - v 1.0.0 2018-06-12
+ * Copyright Clean Code Factory cleancodefactory.de
+ */
+
+
 /**
 * An implementation of a immutable collection structure. Wrapper for a native javascript Array.
 * @constructor

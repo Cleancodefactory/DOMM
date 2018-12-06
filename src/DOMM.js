@@ -1,3 +1,8 @@
+/*!
+ * DOMM - v 1.0.0 2018-06-12
+ * Copyright Clean Code Factory cleancodefactory.de
+ */
+
 var DOMM = function(selector){   
     var _validateNodeType = function(node) {
 		if (!node || !(node instanceof Node)) return false;
