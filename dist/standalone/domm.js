@@ -2606,17 +2606,15 @@ var _ = DOMM;
 		if (!this._node) return this;
 
 		if (arguments.length == 0) {
-			var objResult = [];
-			for (let i = 0; i < this._node.style.length; i++) {
+			var newAttrObj = {};
+			for (var i = 0; i < this._node.style.length; i++) {
 				var attr = this._node.style[i];
 
-								var newAttrObj = {}
-				newAttrObj[attr.name] = attr.value;
+				newAttrObj[attr] = this._node.style[attr];
 
-				objResult.push(newAttrObj);
 			}
 
-			return objResult;
+			return newAttrObj;
 		}
 		if (arguments.length == 1) {
 			if (typeof input === 'object' && !Array.isArray(input)) {
