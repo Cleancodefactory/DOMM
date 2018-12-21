@@ -616,17 +616,12 @@
 		if (!this._node) return this;
 
 		if (arguments.length == 0) {
-			var objResult = [];
-			for (let i = 0; i < this._node.style.length; i++) {
+			var newAttrObj = {};
+			for (var i = 0; i < this._node.style.length; i++) {
 				var attr = this._node.style[i];
-				
-				var newAttrObj = {}
-				newAttrObj[attr.name] = attr.value;
-
-				objResult.push(newAttrObj);
+				newAttrObj[attr] = this._node.style[attr];
 			}
-
-			return objResult;
+			return newAttrObj;
 		}
 		if (arguments.length == 1) {
 			if (typeof input === 'object' && !Array.isArray(input)) {
@@ -723,49 +718,49 @@
 		return this._node;
 	};
 	
-	//Question: ????
-	DOMMNode.prototype.getAttributes = function (filt) {
-		if (!this._node) return this;
+	// //Question: ????
+	// DOMMNode.prototype.getAttributes = function (filt) {
+	// 	if (!this._node) return this;
 
-		var a = {};
+	// 	var a = {};
 			
-		var reFilt = (filt == null) ? null : new RegExp(filt, "i");
-		var matches = null;
-		var attrs = this.attributes();
+	// 	var reFilt = (filt == null) ? null : new RegExp(filt, "i");
+	// 	var matches = null;
+	// 	var attrs = this.attributes();
 	
-		// for(var i in attrs){
-		// 	matches = null;
-		// 	if (reFilt == null) {
-		// 		a[i] = attrs[i];
-		// 	} else {
-		// 		matches = attrs[i].match(reFilt);
-		// 		if (matches != null && matches.length > 0) {
-		// 			if (matches[1] == null) {
-		// 				a[''] = attrs[i];
-		// 			} else {
-		// 				a[matches[1]] = attrs[i];
-		// 			}
-		// 		}
-		// 	}
-		// }
-		for(var i = 0; i < attrs.length; i++) {
-			matches = null;
-			if (reFilt == null) {
-				a[i.name] = attrs[i].value;
-			} else {
-				matches = attrs[i].name.match(reFilt);
-				if (matches != null && matches.length > 0) {
-					if (matches[1] == null) {
-						a[''] = attrs[i].value;
-					} else {
-						a[matches[1]] = attrs[i].value;
-					}
-				}
-			}
-		}
+	// 	// for(var i in attrs){
+	// 	// 	matches = null;
+	// 	// 	if (reFilt == null) {
+	// 	// 		a[i] = attrs[i];
+	// 	// 	} else {
+	// 	// 		matches = attrs[i].match(reFilt);
+	// 	// 		if (matches != null && matches.length > 0) {
+	// 	// 			if (matches[1] == null) {
+	// 	// 				a[''] = attrs[i];
+	// 	// 			} else {
+	// 	// 				a[matches[1]] = attrs[i];
+	// 	// 			}
+	// 	// 		}
+	// 	// 	}
+	// 	// }
+	// 	for(var i = 0; i < attrs.length; i++) {
+	// 		matches = null;
+	// 		if (reFilt == null) {
+	// 			a[i.name] = attrs[i].value;
+	// 		} else {
+	// 			matches = attrs[i].name.match(reFilt);
+	// 			if (matches != null && matches.length > 0) {
+	// 				if (matches[1] == null) {
+	// 					a[''] = attrs[i].value;
+	// 				} else {
+	// 					a[matches[1]] = attrs[i].value;
+	// 				}
+	// 			}
+	// 		}
+	// 	}
 	
-		return a;
-	};
+	// 	return a;
+	// };
 	
 	DOMMNode.prototype.properties = function (args) {
 		if(!this._node) return this;
