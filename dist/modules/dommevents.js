@@ -315,7 +315,7 @@
 
 		if(onceEventsCookies.length > 0){
 			var newElementHandlers = elementHandlers[eventName].filter(function(element){
-				for (let i = 0; i < onceEventsCookies.length; i++) {
+				for (var i = 0; i < onceEventsCookies.length; i++) {
 					var currCookie = onceEventsCookies[i];
 					if(element.cookie == currCookie) return false;
 				}

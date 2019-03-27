@@ -2609,11 +2609,8 @@ var _ = DOMM;
 			var newAttrObj = {};
 			for (var i = 0; i < this._node.style.length; i++) {
 				var attr = this._node.style[i];
-
 				newAttrObj[attr] = this._node.style[attr];
-
 			}
-
 			return newAttrObj;
 		}
 		if (arguments.length == 1) {
@@ -2706,33 +2703,10 @@ var _ = DOMM;
 		return this._node;
 	};
 
-	DOMMNode.prototype.getAttributes = function (filt) {
-		if (!this._node) return this;
 
-		var a = {};
 
-					var reFilt = (filt == null) ? null : new RegExp(filt, "i");
-		var matches = null;
-		var attrs = this.attributes();
 
-		for(var i = 0; i < attrs.length; i++) {
-			matches = null;
-			if (reFilt == null) {
-				a[i.name] = attrs[i].value;
-			} else {
-				matches = attrs[i].name.match(reFilt);
-				if (matches != null && matches.length > 0) {
-					if (matches[1] == null) {
-						a[''] = attrs[i].value;
-					} else {
-						a[matches[1]] = attrs[i].value;
-					}
-				}
-			}
-		}
 
-			return a;
-	};
 
 		DOMMNode.prototype.properties = function (args) {
 		if(!this._node) return this;
@@ -3220,14 +3194,14 @@ DOMMNodeCollection.prototype.isEmpty = function(){
 DOMMNodeCollection.prototype.has = function (selector) {
 	var res = [];
 	if (typeof selector === "object") {
-		for (let i = 0, len = this.length; i < len; i++) {
+		for (var i = 0, len = this.length; i < len; i++) {
 			var el = this[i];
 
 			if (selector instanceof DOMMNode) selector = selector._node;
 			if (el.contains(selector)) res.push(el);	
 		}
 	} else if (typeof selector == "string") {
-		for (let i = 0, len = this.length; i < len; i++) {
+		for (var i = 0, len = this.length; i < len; i++) {
 			var el = this[i];
 
 			if (el.select(selector).length > 0) res.push(el);	
@@ -3568,7 +3542,7 @@ var isProperDOMMNode = function(node){
 
 		if(onceEventsCookies.length > 0){
 			var newElementHandlers = elementHandlers[eventName].filter(function(element){
-				for (let i = 0; i < onceEventsCookies.length; i++) {
+				for (var i = 0; i < onceEventsCookies.length; i++) {
 					var currCookie = onceEventsCookies[i];
 					if(element.cookie == currCookie) return false;
 				}

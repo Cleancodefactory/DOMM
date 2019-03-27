@@ -298,14 +298,14 @@ DOMMNodeCollection.prototype.has = function (selector) {
 	//over collection -> use foreach of ImmutableCollection
 	var res = [];
 	if (typeof selector === "object") {
-		for (let i = 0, len = this.length; i < len; i++) {
+		for (var i = 0, len = this.length; i < len; i++) {
 			var el = this[i];
 
 			if (selector instanceof DOMMNode) selector = selector._node;
 			if (el.contains(selector)) res.push(el);	
 		}
 	} else if (typeof selector == "string") {
-		for (let i = 0, len = this.length; i < len; i++) {
+		for (var i = 0, len = this.length; i < len; i++) {
 			var el = this[i];
 
 			if (el.select(selector).length > 0) res.push(el);	
