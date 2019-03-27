@@ -14,6 +14,7 @@ Note: Remember that the execution of $$() will always return DOMMNodeCollection.
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
 ### Prerequisites
+
 If you need only the distribution file you can download it from dist folder. In this folder you will be able to download the whole source code of the library from the dist/standalone folder (human readable and/or minified version) or separate modules from dist/modules.
 
 There are two modules at this point:
